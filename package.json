@@ -1,0 +1,17 @@
+{
+  "name": "eleventy-tailwind-template",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --watch --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@tailwindcss/postcss": "^4.0.17",
+    "@tailwindcss/typography": "^0.5.16",
+    "cssnano": "^7.0.6",
+    "html-minifier-terser": "^7.2.0",
+    "tailwindcss": "^4.0.17",
+    "terser": "^5.39.0"
+  }
+}

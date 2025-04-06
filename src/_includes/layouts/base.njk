@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            {{ title or metadata.title }}
+        </title>
+
+        <meta name="description" content="{{ description or metadata.description }}">
+        <meta name="author" content="{{ author or metadata.author }}">
+        <meta name="keywords" content="{{ keywords or metadata.keywords }}">
+        <meta name="generator" content="{{ eleventy.generator }}">
+
+        {%- css %}
+        {% include "src/css/tailwind.css" %}
+        {% endcss %}
+
+        <style>
+            {% getBundle "css" %}
+        </style>
+    </head>
+
+    <body>
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+
+        <main>
+            {% block content %}
+                {{ content | safe }}
+            {% endblock %}
+        </main>
+
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+
+        <script type="module" src="{% getBundleFileUrl "js" %}"></script>
+    </body>
+</html>

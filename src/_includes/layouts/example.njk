@@ -1,0 +1,14 @@
+{# Example of a layout that's based on the base layout but has its own header and footer. #}
+
+{% extends "layouts/base.njk" %}
+
+{% block header %}
+{% endblock %}
+
+{% block footer %}
+    {% include "partials/footer.njk" %}
+{% endblock %}
+
+{% block content %}
+    {{ content | safe }}
+{% endblock %}
